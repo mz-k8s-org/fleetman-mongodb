@@ -35,7 +35,7 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 2Gi
+      storage: 1Gi
 ---
 # How do we want it implemented
 apiVersion: v1
@@ -45,11 +45,11 @@ metadata:
 spec:
   storageClassName: mylocalstorage
   capacity:
-    storage: 2Gi
+    storage: 1Gi
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: "/mnt/mongodb/"
+    path: /run/desktop/mnt/host/d/k8smongo
     type: DirectoryOrCreate
 ---
 kind: Service
